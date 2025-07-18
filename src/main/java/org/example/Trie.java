@@ -44,6 +44,15 @@ public class Trie {
         currentNode.isWord = true;
     }
 
+
+    /**
+     * Traverses the Trie according toi the input string provided,
+     * and returns the last node reached, or null if path dosent exist
+     * 
+     * @param input The input string to traverse the Trie
+     * @return The last TrieNode reached following the input string,
+     *         or null if the path does not exist in the Trie
+     */
     private TrieNode findNode(String input) {
         TrieNode currentNode = root;
 
