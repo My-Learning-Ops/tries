@@ -44,6 +44,18 @@ public class Trie {
         currentNode.isWord = true;
     }
 
+    /**
+     * Searches for a complete word in the Trie
+     * 
+     * @param word The word to search for in the Trie
+     * @return true if the word exists in the Trie, false otherwise
+     */
+    public boolean search(String word) {
+        TrieNode node = findNode(word);
+        // If the node is found and it marks the end of a word, return true
+        return node != null && node.isWord;
+    }
+
 
     /**
      * Traverses the Trie according toi the input string provided,
