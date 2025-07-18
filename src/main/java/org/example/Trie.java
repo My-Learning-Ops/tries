@@ -68,6 +68,7 @@ public class Trie {
     }
 
 
+
     /**
      * Traverses the Trie according toi the input string provided,
      * and returns the last node reached, or null if path dosent exist
@@ -89,6 +90,15 @@ public class Trie {
             currentNode = currentNode.children.get(ch);
         }
         return currentNode;
+    }
+
+    private void collectWords(TrieNode node, StringBuilder prefix, StringBuilder output) {
+
+        for (Map.Entry<Character, TrieNode> entry : node.children.entrySet()) {
+            // Current character and child node
+            char ch = entry.getKey();
+            TrieNode childNode = entry.getValue();
+        }
     }
 
 
