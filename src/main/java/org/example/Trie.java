@@ -68,6 +68,16 @@ public class Trie {
     }
 
 
+    /**
+     * Returns a string representation of all words in the Trie
+     */
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+        collectWords(root, new StringBuilder(), output);
+        return output.toString();
+    }
+
+
 
     /**
      * Traverses the Trie according toi the input string provided,
@@ -92,8 +102,16 @@ public class Trie {
         return currentNode;
     }
 
+    /**
+     * Recursively collects all words in the Trie starting from the given node
+     * 
+     * @param node The current trie node being visited
+     * @param prefix The current prefix built so far
+     * @param output StringBuilder to collect the words found
+     */
     private void collectWords(TrieNode node, StringBuilder prefix, StringBuilder output) {
 
+        // Recursively collect words from child nodes
         for (Map.Entry<Character, TrieNode> entry : node.children.entrySet()) {
             // Current character and child node
             char ch = entry.getKey();
