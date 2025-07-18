@@ -109,10 +109,11 @@ public class Trie {
      * @param output StringBuilder to collect the words found
      */
     private void collectWords(TrieNode node, StringBuilder prefix, StringBuilder output) {
-
-        if (node.children.isEmpty()) {
-            return;
+        // Base case - if the node marks the end of a word
+        if (node.isWord) {
+            output.append(prefix).append("\n");
         }
+
         // Recursively collect words from child nodes
         for (Map.Entry<Character, TrieNode> entry : node.children.entrySet()) {
             // Current character and child node
