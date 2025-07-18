@@ -44,6 +44,21 @@ public class Trie {
         currentNode.isWord = true;
     }
 
+    private TrieNode findNode(String input) {
+        TrieNode currentNode = root;
+
+        // Loop through each char in input string
+        for (char ch : input.toCharArray()) {
+            // If the character is not found, return null
+            if (!currentNode.children.containsKey(ch)) {
+                return null;
+            }
+            // Move to the child node
+            currentNode = currentNode.children.get(ch);
+        }
+        return currentNode;
+    }
+
 
 
 
