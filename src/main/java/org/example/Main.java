@@ -19,7 +19,7 @@ public class Main {
         trie.insert("bat");
 
 
-        System.out.println(trie);
+        System.out.println(trie.toString());
         
 
 

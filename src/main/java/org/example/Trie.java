@@ -67,7 +67,6 @@ public class Trie {
         return node != null && node.isWord;
     }
 
-
     /**
      * Returns a string representation of all words in the Trie
      */
@@ -111,6 +110,9 @@ public class Trie {
      */
     private void collectWords(TrieNode node, StringBuilder prefix, StringBuilder output) {
 
+        if (node.children.isEmpty()) {
+            return;
+        }
         // Recursively collect words from child nodes
         for (Map.Entry<Character, TrieNode> entry : node.children.entrySet()) {
             // Current character and child node
