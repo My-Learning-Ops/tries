@@ -98,6 +98,15 @@ public class Trie {
             // Current character and child node
             char ch = entry.getKey();
             TrieNode childNode = entry.getValue();
+
+            // Add current character to prefix
+            prefix.append(ch);
+            
+            // Recurse into the child
+            collectWords(childNode, prefix, output);
+
+            // Backtrack after recursion to remove last char
+            prefix.deleteCharAt(prefix.length() - 1);
         }
     }
 
