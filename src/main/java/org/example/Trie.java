@@ -45,6 +45,17 @@ public class Trie {
     }
 
     /**
+     * Checks if any word in the Trie starts with the given prefix
+     * 
+     * @param prefix The prefix to search for in the Trie
+     * @return true if any word starts with the prefix, false otherwise
+     */
+    public boolean startsWith(String prefix) {
+        // Check if the Trie contains any word that starts with the given prefix
+        return findNode(prefix) != null;
+    }
+
+    /**
      * Searches for a complete word in the Trie
      * 
      * @param word The word to search for in the Trie
